@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Pages\Shared\Bookings\Booking.cshtml" />
+      <_ContentIncludedByDefault Remove="Bookings\Booking.cshtml" />
     </ItemGroup>
 
 </Project>
