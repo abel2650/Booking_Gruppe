@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Booking_Gruppe.Services;
 
-public class PriserRepository
+public class PriserRepository : IPriserRepository
 {
     
         private List<Frisør> _liste;  
@@ -23,6 +23,8 @@ public class PriserRepository
                 PopulateFrisørRepository();
             }
         }
+
+                
 
         private void PopulateFrisørRepository()
         {

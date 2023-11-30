@@ -1,9 +1,28 @@
 @page
+@using Booking_Gruppe.Services    
+
 @model Booking_Gruppe.Bookings.Booking
 
 @{
     Layout = null;
 }
+<p>hej</p>  
+@{ int i = 0;}
+@{
+    if (Model.ListFrisør != null)
+    {
+        i = 2; 
+    }
+}         
+       @i; 
+
+@foreach (Frisør f in Model.ListFrisør)
+{
+    @f.Nummer; 
+}
+
+       
+  
 
 <!DOCTYPE html>
 
