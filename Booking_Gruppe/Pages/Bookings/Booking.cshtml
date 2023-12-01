@@ -1,38 +1,35 @@
 @page
 @using Booking_Gruppe.Services    
-
+@using Booking_Gruppe.model
 @model Booking_Gruppe.Bookings.Booking
-
 @{
-    Layout = null;
-}
-<p>hej</p>  
-@{ int i = 0;}
-@{
-    if (Model.ListFrisør != null)
-    {
-        i = 2; 
-    }
-}         
-       @i; 
-
-@foreach (Frisør f in Model.ListFrisør)
-{
-    @f.Nummer; 
+    Layout = "_Layout"; // Assuming you have a shared layout for styling
 }
 
-       
-  
+<div class="container mt-4">
+    <h2>Booking</h2>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div>
-    
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nummer</th>
+                <th>Navn</th>
+                <th>Beskrivelse</th>
+                <th>Pris</th>
+                <th>Farvning</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Frisør f in Model.ListFrisør)
+            {
+                <tr>
+                    <td>@f.Nummer</td>
+                    <td>@f.Navn</td>
+                    <td>@f.Beskrivelse</td>
+                    <td>@f.Pris</td>
+                    <td>@(f.Farvening ? "Yes" : "No")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
-</body>
-</html>

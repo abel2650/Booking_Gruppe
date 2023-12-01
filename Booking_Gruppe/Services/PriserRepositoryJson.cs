@@ -1,11 +1,12 @@
 using Booking_Gruppe.Services;
 using System.Text.Json;
+using Booking_Gruppe.model;
 
 namespace Booking_Gruppe.Services
 {
     public class PriserRepositoryJson : IPriserRepository 
     {
-        private List<Frisør> _liste;  
+        private List<Frisør> _liste = new List <Frisør> ();
 
         public List<Frisør> ListeAfFrisør 
         {

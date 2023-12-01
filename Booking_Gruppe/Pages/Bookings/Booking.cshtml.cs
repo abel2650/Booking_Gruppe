@@ -1,4 +1,5 @@
 using Booking_Gruppe.Services;
+using Booking_Gruppe.model; 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -23,7 +24,8 @@ public class Booking : PageModel
     public Booking(IPriserRepository repo)
     {
         PriserRepositoryny = repo;
-        _listFrisør = repo.ListeAfFrisør; 
+        _listFrisør = repo.ListeAfFrisør ?? new List<Frisør>();  
+        _listFrisør.Add(new Frisør(1, "Anders", "Frisør", 75.2, true));
     }
             
     public void OnGet()

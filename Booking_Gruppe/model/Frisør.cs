@@ -1,4 +1,4 @@
-namespace Booking_Gruppe.Services
+namespace Booking_Gruppe.model
 {
     public class Frisør 
     {
