@@ -25,7 +25,8 @@ public class Booking : PageModel
     {
         PriserRepositoryny = repo;
         _listFrisør = repo.ListeAfFrisør ?? new List<Frisør>();  
-        _listFrisør.Add(new Frisør(1, "Anders", "Frisør", 75.2, true));
+        _listFrisør.Add(new Frisør(1, "Herreklip", "Frisør", 75.2, true));
+        _listFrisør.Add(new Frisør(2, "Dame klip", "Frisør", 75.2, true));
     }
             
     public void OnGet()
