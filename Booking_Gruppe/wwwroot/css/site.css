@@ -20,6 +20,7 @@ html {
 body {
     margin-bottom: 60px;
     background-color: #edd18f;
+    
 }
 
 h1 {
@@ -36,4 +37,13 @@ nav {
 
 .menutext {
     color: white;
+}
+img {
+    width: 15%
+}
+.frontpagebody {
+    background-image: url('../images/pexels-stefan-lorentz-668196 (1).jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }

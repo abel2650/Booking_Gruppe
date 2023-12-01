@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
@@ -9,6 +9,11 @@
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Pages\Shared\Bookings\Booking.cshtml" />
       <_ContentIncludedByDefault Remove="Bookings\Booking.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="wwwroot\Images\pexels-stefan-lorentz-668196 %281%29.jpg" />
+      <None Include="wwwroot\Images\Rodeofrisør Booking Billed.png" />
     </ItemGroup>
 
 </Project>
