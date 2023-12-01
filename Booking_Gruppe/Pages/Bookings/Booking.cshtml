@@ -13,23 +13,61 @@
         <thead>
             <tr>
                 <th>Nummer</th>
-                <th>Navn</th>
+                <th>Tjenester</th>
                 <th>Beskrivelse</th>
                 <th>Pris</th>
                 <th>Farvning</th>
+                <th></th> <!-- Ny kolonne til "Tilføj til kurv" knap -->
             </tr>
         </thead>
         <tbody>
-            @foreach (Frisør f in Model.ListFrisør)
+            @foreach (var frisør in Model.ListFrisør)
             {
                 <tr>
-                    <td>@f.Nummer</td>
-                    <td>@f.Tjenester</td>
-                    <td>@f.Beskrivelse</td>
-                    <td>@f.Pris</td>
-                    <td>@(f.Farvening ? "Yes" : "No")</td>
+                    <td>@frisør.Nummer</td>
+                    <td>@frisør.Tjenester</td>
+                    <td>@frisør.Beskrivelse</td>
+                    <td>@frisør.Pris</td>
+                    <td>@(frisør.Farvening ? "Ja" : "Nej")</td>
+                    <td>
+                        <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Tilføj til kurv</button>
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
+
+    <!-- Formular til at tilføje en ny booking -->
+    <form method="post">
+        <!-- ... (din eksisterende formularkode) -->
+    </form>
+
+    <!-- Samlet pris sektion -->
+    <div class="mt-4">
+        <h3>Samlet Pris: <span id="totalPrice">0</span> DKK</h3>
+        
+        <!-- "Book nu!" knap -->
+        <button type="button" class="btn btn-primary" onclick="bookNow()">Book nu!</button>
+    </div>
 </div>
+
+<script>
+    var total = 0;
+
+    function addToCart(nummer, pris) {
+        // Implementér logik for at tilføje til kurv baseret på frisørnummeret og pris
+        total += pris;
+        updateTotalPrice();
+        alert("Frisør med nummer " + nummer + " tilføjet til kurven!");
+    }
+
+    function updateTotalPrice() {
+        // Opdaterer det samlede beløb i HTML
+        document.getElementById("totalPrice").innerText = total.toFixed(2);
+    }
+
+    function bookNow() {
+        // Implementér logik for at udføre booking og vis bekræftelsesmeddelelse
+        alert("Den er nu booket!");
+    }
+</script>
