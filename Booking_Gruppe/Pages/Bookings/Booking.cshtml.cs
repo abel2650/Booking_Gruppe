@@ -9,7 +9,7 @@ public class Booking : PageModel
 {
     private IPriserRepository _priserRepository;
     private List<Frisør> _listFrisør; 
-    [BindProperty]
+    
     public List<Frisør> ListFrisør
     {
         get { return _listFrisør; }

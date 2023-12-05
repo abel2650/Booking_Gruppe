@@ -1,0 +1,25 @@
+@page
+@model Booking_Gruppe.Pages.LoginModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+<div>
+    <h1>Login page</h1>
+    
+    <form method="post">
+        Name: <input type="text" asp-for="@Model.Username" /><br/>
+        Pass: <input type="password" asp-for="@Model.Password" /><br />
+        <input type="submit" value="Login" class="btn btn-primary" /><br />
+    </form>
+</div>
+</body>
+</html>

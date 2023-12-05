@@ -4,7 +4,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddSingleton<IPriserRepository >(new PriserRepositoryJson());
+builder.Services.AddSingleton<IPriserRepository>(provider => new PriserRepositoryJson());
+builder.Services.AddSingleton<IUserRepository>(provider => new UserRepository(true));
 
 var app = builder.Build();
 
@@ -24,5 +25,8 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+// Specify the default page explicitly
+app.MapFallbackToPage("/Bookings/Booking");
 
 app.Run();
