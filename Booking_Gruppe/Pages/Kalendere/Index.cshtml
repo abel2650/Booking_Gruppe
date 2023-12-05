@@ -1,0 +1,47 @@
+﻿@page
+@model Booking_Gruppe.Pages.Kalendere.IndexModel
+@{
+
+    ViewData["Title"] = "Calendar";
+}
+
+<div class="text-center">
+    <h2>@ViewData["Title"]</h2>
+    
+    <div>
+        <a asp-page="./Index" asp-route-month="@(Model.CurrentMonth.AddMonths(-1).ToString("MM"))" class="btn btn-primary">Previous Month</a>
+        <span>@Model.CurrentMonth.ToString("MMMM yyyy")</span>
+        <a asp-page="./Index" asp-route-month="@(Model.CurrentMonth.AddMonths(1).ToString("MM"))" class="btn btn-primary">Next Month</a>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (var week = 0; week < Model.Weeks.Count; week++)
+            {
+                <tr>
+                    @foreach (var day in Model.Weeks[week])
+                    {
+                        <td>
+                            <form method="post" asp-page-handler="BookDate" asp-route-date="@day.ToString("yyyy-MM-dd")">
+                                <button type="submit" class="@(day.Month != Model.CurrentMonth.Month ? "disabled" : (day < DateTime.Now ? "past-date" : (Model.TakenDates.Contains(day) ? "taken" : "")))">
+                                    @day.Day
+                                </button>
+                            </form>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
