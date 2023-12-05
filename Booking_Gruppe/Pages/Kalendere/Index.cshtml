@@ -2,28 +2,28 @@
 @model Booking_Gruppe.Pages.Kalendere.IndexModel
 @{
 
-    ViewData["Title"] = "Calendar";
+    ViewData["Title"] = "Kalendar";
 }
 
 <div class="text-center">
     <h2>@ViewData["Title"]</h2>
     
     <div>
-        <a asp-page="./Index" asp-route-month="@(Model.CurrentMonth.AddMonths(-1).ToString("MM"))" class="btn btn-primary">Previous Month</a>
+        <a asp-page="./Index" asp-route-month="@(Model.CurrentMonth.AddMonths(-1).ToString("MM"))" class="btn btn-primary">Sidste Måned</a>
         <span>@Model.CurrentMonth.ToString("MMMM yyyy")</span>
-        <a asp-page="./Index" asp-route-month="@(Model.CurrentMonth.AddMonths(1).ToString("MM"))" class="btn btn-primary">Next Month</a>
+        <a asp-page="./Index" asp-route-month="@(Model.CurrentMonth.AddMonths(1).ToString("MM"))" class="btn btn-primary">Næste Måned</a>
     </div>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
+                <th>Søn</th>
+                <th>Man</th>
+                <th>Tir</th>
+                <th>Ons</th>
+                <th>Tor</th>
+                <th>Fre</th>
+                <th>Lør</th>
             </tr>
         </thead>
         <tbody>
