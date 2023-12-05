@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/Booking_Gruppe.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
 <header>
@@ -29,8 +31,8 @@
                         <a class="nav-link menutext" asp-area="" asp-page="/Bookings/Booking">Booking</a>
                     </li>
                      <li class="nav-item">
-                         <a class="nav-link text-dark" asp-area="" asp-page="/Login">Login</a>
-                         </li>
+                        <a class="nav-link menutext" asp-area="" asp-page="/Login">Login</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -42,9 +44,12 @@
     </main>
 </div>
 
-<footer class="border-top footer text-muted">
+<footer class="footer text-muted">
     <div class="container">
-        &copy; 2023 - Booking_Gruppe - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        &copy; 2023 - Rodeo - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            <a href="https://www.instagram.com/m.n.hartmann/">
+            <ion-icon name="logo-instagram" style="font-size:30px;color:red"></ion-icon>
+            </a>
     </div>
 </footer>
 
