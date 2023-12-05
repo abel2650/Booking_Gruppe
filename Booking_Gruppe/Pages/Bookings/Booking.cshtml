@@ -14,9 +14,8 @@
             <tr>
                 <th>Nummer</th>
                 <th>Tjenester</th>
-                <th>Beskrivelse</th>
+                <th>Varighed</th>
                 <th>Pris</th>
-                <th>Farvning</th>
                 <th></th> <!-- Ny kolonne til "Tilføj til kurv" knap -->
             </tr>
         </thead>
@@ -26,9 +25,8 @@
                 <tr>
                     <td>@frisør.Nummer</td>
                     <td>@frisør.Tjenester</td>
-                    <td>@frisør.Beskrivelse</td>
+                    <td>@frisør.Varighed</td>
                     <td>@frisør.Pris</td>
-                    <td>@(frisør.Farvening ? "Ja" : "Nej")</td>
                     <td>
                         <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Tilføj til kurv</button>
                     </td>
