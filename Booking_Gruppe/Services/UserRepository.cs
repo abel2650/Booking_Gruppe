@@ -1,7 +1,8 @@
 using Booking_Gruppe.model;
-namespace Booking_Gruppe.Services;
+using System.Collections.Generic;
 
-
+namespace Booking_Gruppe.Services
+{
     public class UserRepository : IUserRepository
     {
         private List<User> _users = new List<User>();
@@ -14,11 +15,11 @@ namespace Booking_Gruppe.Services;
 
             if (mockData)
             {
-                _users.Add(new User(1, "admin", "Ismail", true));
+                _users.Add(new User(1, "Rebin", "Ismail", true));
                 _users.Add(new User(2, "Mathias", "Rebin", false));
                 _users.Add(new User(3, "Marcus", "Ismail", false));
+                _users.Add(new User(4, "Chris", "1234", false));
             }
-
         }
 
         public void AddUser(User user)
@@ -51,4 +52,6 @@ namespace Booking_Gruppe.Services;
             UserLoggedIn = null;
         }
     }
+}
+
 
