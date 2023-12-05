@@ -36,8 +36,8 @@
                                 <span class="date @(day.Month != Model.CurrentMonth.Month ? "disabled" : (day < DateTime.Now ? "past-date" : (Model.TakenDates.Contains(day) ? "taken" : "")))">
                                     @day.Day
                                 </span>
-                                <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#eventModal" data-date="@day.ToString("yyyy-MM-dd")">
-                                    Opret tid
+                                <button>
+								<a class="btn btn-info btn-sm" asp-area="" asp-page="/Kvittering/Kvittering1">Book Tid</a>    
                                 </button>
                             </div>
                         </td>
