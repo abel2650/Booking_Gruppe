@@ -26,7 +26,7 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-// Specify the default page explicitly
+// Set the default page to "/Bookings/Booking"
 app.MapFallbackToPage("/Bookings/Booking");
 
 app.Run();

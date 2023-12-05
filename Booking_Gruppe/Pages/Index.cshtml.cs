@@ -17,10 +17,7 @@ public class IndexModel : PageModel
 
     public IActionResult OnGet()
     {
-        if (_repo is null || _repo.UserLoggedIn is null)
-        {
-            return RedirectToPage("/Login");
-        }
+   
 
         return Page();
     }

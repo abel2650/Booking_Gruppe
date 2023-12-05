@@ -24,9 +24,12 @@ public class Booking : PageModel
     public Booking(IPriserRepository repo)
     {
         PriserRepositoryny = repo;
-        _listFrisør = repo.ListeAfFrisør ?? new List<Frisør>();  
-        _listFrisør.Add(new Frisør(1, "Herreklip", "Frisør", 75.2, true));
-        _listFrisør.Add(new Frisør(2, "Dame klip", "Frisør", 75.2, true));
+        _listFrisør = repo.ListeAfFrisør ?? new List<Frisør>();
+        if (_listFrisør.Count == 0)
+        {
+            _listFrisør.Add(new Frisør(1, "Herreklip", "Frisør", 75.2, true));
+            _listFrisør.Add(new Frisør(2, "Dame klip", "Frisør", 75.2, true));
+        }
     }
             
     public void OnGet()
