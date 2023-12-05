@@ -40,9 +40,26 @@ button.accept-policy {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+.social-icon-insta {
+    
+    font-size: 30px;
+    color: red;
+    transition: color 0.2s;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.social-icon-facebook {
+    
+    font-size: 30px;
+    color: white;
+    transition: color 0.2s;
+    text-decoration: none;
+    margin: 0 10px;
 }
