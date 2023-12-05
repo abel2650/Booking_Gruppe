@@ -4,7 +4,7 @@ namespace Booking_Gruppe.model
     {
         private int _nummer;
         private string _tjenester;
-        private string _beskrivelse;
+        private string _varighed;
         private double _pris;
         private bool _farvening;
        
@@ -13,7 +13,7 @@ namespace Booking_Gruppe.model
 
         public string Tjenester { get { return _tjenester; } set { _tjenester = value; } }
 
-        public string Beskrivelse { get { return _beskrivelse; } set { _beskrivelse = value; } }
+        public string Varighed { get { return _varighed; } set { _varighed = value; } }
 
         public double Pris { get { return _pris; } set { _pris = value; } }
 
@@ -27,17 +27,17 @@ namespace Booking_Gruppe.model
         {
             _nummer = 0;
             _tjenester = "";
-            _beskrivelse = "";
+            _varighed = "";
             _pris = 0;
             _farvening = false;
           
         }
 
-        public Frisør(int nummer, string tjenester, string beskrivelse, double pris, bool Farvening) 
+        public Frisør(int nummer, string tjenester, string varighed, double pris, bool Farvening) 
         {
             _nummer = nummer;
             _tjenester = tjenester;
-            _beskrivelse = beskrivelse;
+            _varighed = varighed;
             _pris = pris;
             _farvening = Farvening;
           
@@ -45,7 +45,7 @@ namespace Booking_Gruppe.model
 
         public override string ToString()
         {
-            return $"{{{nameof(Nummer)}={Nummer}, {nameof(Tjenester)}={Tjenester}, {nameof(Beskrivelse)}={Beskrivelse}, {nameof(Pris)}={Pris}, {nameof(Farvening)}={Farvening}, }}";
+            return $"{{{nameof(Nummer)}={Nummer}, {nameof(Tjenester)}={Tjenester}, {nameof(Varighed)}={Varighed}, {nameof(Pris)}={Pris}, {nameof(Farvening)}={Farvening}, }}";
         }
     }
 }
