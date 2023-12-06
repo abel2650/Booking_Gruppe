@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
 
 namespace Booking_Gruppe.Pages;
 
@@ -8,7 +9,7 @@ namespace Booking_Gruppe.Pages;
 [IgnoreAntiforgeryToken]
 public class ErrorModel : PageModel
 {
-    public string? RequestId { get; set; }
+    public string RequestId { get; set; }
 
     public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 

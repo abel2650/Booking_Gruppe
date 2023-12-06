@@ -1,10 +1,8 @@
-using Booking_Gruppe.model;
 using Booking_Gruppe.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Threading.Tasks;
 
 namespace Booking_Gruppe.Pages
 {
@@ -17,11 +15,17 @@ namespace Booking_Gruppe.Pages
             _userRepository = userRepository;
         }
 
-        public IActionResult OnGet()
+        public async Task<IActionResult> OnPostAsync()
         {
             _userRepository.LogoutUser();
 
-            return RedirectToPage("/Index"); // Redirect to your desired page after logout
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            Console.WriteLine($"User {_userRepository.UserLoggedIn?.Name} logged out.");
+
+            return RedirectToPage("/Index");
         }
+
+
     }
 }
