@@ -47,17 +47,3 @@ img {
     background-attachment: fixed;
     background-size: cover;
 }
-.social-icon-insta {
-    font-size: 40px;
-    color: red;
-    transition: color 0.2s;
-    text-decoration: none;
-    margin: 0 10px;
-}
-.social-icon-facebook {
-    font-size: 30px;
-    color: white;
-    transition: color 0.2s;
-    text-decoration: none;
-    margin: 0 10px;
-}
