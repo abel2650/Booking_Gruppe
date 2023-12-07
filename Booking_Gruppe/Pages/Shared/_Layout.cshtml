@@ -48,7 +48,7 @@
                     <li class="nav-item">
                          @if (User.Identity.IsAuthenticated)
                          {
-                             <span class="nav-link menutext">Hello, @User.Identity.Name!</span>
+                             <span class="nav-link menutext">Hej, @User.Identity.Name!</span>
                              <form  method="post">
                                  <button type="submit" class="nav-link btn-link btn-dark menutext" asp-page="/Logout" >Logout</button>
                              </form>
