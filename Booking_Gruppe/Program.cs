@@ -1,5 +1,5 @@
 using Booking_Gruppe.Services;
-using Microsoft.AspNetCore.Authentication.Cookies; // Add this namespace
+using Microsoft.AspNetCore.Authentication.Cookies; 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +20,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 // Other services...
 builder.Services.AddSingleton<IPriserRepository>(provider => new PriserRepositoryJson());
 builder.Services.AddSingleton<IUserRepository>(provider => new UserRepository(true));
+
 
 var app = builder.Build();
 

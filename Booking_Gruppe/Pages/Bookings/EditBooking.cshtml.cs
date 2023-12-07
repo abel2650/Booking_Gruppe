@@ -2,19 +2,13 @@ using Booking_Gruppe.Services;
 using Booking_Gruppe.model; 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
 namespace Booking_Gruppe.Bookings;
 
-public class Booking : PageModel
+public class EditBooking : PageModel
 {
     private IPriserRepository _priserRepository;
-    private List<Frisør> _listFrisør;
-
-    public bool IsAdmin
-    {
-        get; set;
-
-    }
+    private List<Frisør> _listFrisør; 
+    
     public List<Frisør> ListFrisør
     {
         get { return _listFrisør; }
@@ -26,11 +20,9 @@ public class Booking : PageModel
         set { _priserRepository = value; }
     }
 
-    public Booking(IPriserRepository repo, IUserRepository Users)
+    public EditBooking(IPriserRepository repo)
     {
         PriserRepositoryny = repo;
-        if(Users.UserLoggedIn != null)
-        IsAdmin = Users.UserLoggedIn.IsAdmin;
         _listFrisør = repo.ListeAfFrisør ?? new List<Frisør>();
         if (_listFrisør.Count == 0)
         {

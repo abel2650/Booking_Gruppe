@@ -1,7 +1,8 @@
 @page
+@model Booking_Gruppe.Bookings.EditBooking
 @using Booking_Gruppe.Services    
 @using Booking_Gruppe.model
-@model Booking_Gruppe.Bookings.Booking
+
 @{
     Layout = "_Layout"; // Assuming you have a shared layout for styling
 }
@@ -30,15 +31,15 @@
                     <td>
                         <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Tilføj til kurv</button>
                     </td>
-                    @if (@Model.IsAdmin)
-                    {
-                        <td>
-                            <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Slet</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Ændre</button>
-                        </td>
-                    }
+                                        
+                                            <td>
+                                                <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Slet</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Ændre</button>
+                                            </td>
+                                        
+                    
                 </tr>
             }
         </tbody>

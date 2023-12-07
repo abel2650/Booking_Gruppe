@@ -20,6 +20,7 @@ namespace Booking_Gruppe.Pages
             _userRepository.LogoutUser();
 
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            
 
             Console.WriteLine($"User {_userRepository.UserLoggedIn?.Name} logged out.");
 
