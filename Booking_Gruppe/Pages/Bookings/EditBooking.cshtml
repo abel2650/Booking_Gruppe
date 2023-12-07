@@ -20,8 +20,9 @@
                 <th></th> <!-- Ny kolonne til "Tilføj til kurv" knap -->
             </tr>
         </thead>
-        <tbody>
-            @foreach (var frisør in Model.ListFrisør)
+        <tbody>     
+        <form method="post">
+        @foreach (var frisør in Model.ListFrisør)
             {
                 <tr>
                     <td>@frisør.Nummer</td>
@@ -32,16 +33,17 @@
                         <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Tilføj til kurv</button>
                     </td>
                                         
-                                            <td>
-                                                <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Slet</button>
-                                            </td>
-                                            <td>
-                                                <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Ændre</button>
-                                            </td>
+                    <td>
+                        <input type="submit" value="Slet" class="btn btn-success" asp-page-handler="Delete" asp-route-nummer="@frisør.Nummer">
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Ændre</button>
+                    </td>
                                         
                     
                 </tr>
-            }
+            }    
+        </form> 
         </tbody>
     </table>
 
@@ -69,7 +71,7 @@
         updateTotalPrice();
         alert("Frisør med nummer " + nummer + " tilføjet til kurven!");
     }
-
+    
     function updateTotalPrice() {
         // Opdaterer det samlede beløb i HTML
         document.getElementById("totalPrice").innerText = total.toFixed(2);
