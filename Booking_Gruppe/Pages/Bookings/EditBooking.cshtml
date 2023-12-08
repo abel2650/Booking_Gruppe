@@ -20,9 +20,8 @@
                 <th></th> <!-- Ny kolonne til "Tilføj til kurv" knap -->
             </tr>
         </thead>
-        <tbody>     
-        <form method="post">
-        @foreach (var frisør in Model.ListFrisør)
+        <tbody>
+            @foreach (var frisør in Model.ListFrisør)
             {
                 <tr>
                     <td>@frisør.Nummer</td>
@@ -33,17 +32,25 @@
                         <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Tilføj til kurv</button>
                     </td>
                                         
+<<<<<<< HEAD
                     <td>
-                        <input type="submit" value="Slet" class="btn btn-success" asp-page-handler="Delete" asp-route-nummer="@frisør.Nummer">
+                        <input type="submit" value="Slett" class="btn btn-success" asp-page-handler="Delete" asp-route-nummer="@frisør.Nummer">
                     </td>
                     <td>
                         <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Ændre</button>
                     </td>
+=======
+                                            <td>
+                                                <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Slet</button>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Ændre</button>
+                                            </td>
+>>>>>>> parent of 4ef5aef (init)
                                         
                     
                 </tr>
-            }    
-        </form> 
+            }
         </tbody>
     </table>
 
@@ -69,9 +76,9 @@
         // Implementér logik for at tilføje til kurv baseret på frisørnummeret og pris
         total += pris;
         updateTotalPrice();
-        alert("Frisør med nummer " + nummer + " tilføjet til kurven!");
+        alert("Frisør med nummeer " + nummer + " tilføjet til kurven!");
     }
-    
+
     function updateTotalPrice() {
         // Opdaterer det samlede beløb i HTML
         document.getElementById("totalPrice").innerText = total.toFixed(2);

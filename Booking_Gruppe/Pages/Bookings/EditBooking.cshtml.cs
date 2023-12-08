@@ -43,6 +43,7 @@ public class EditBooking : PageModel
     {
         
     }
+<<<<<<< HEAD
 
     public IActionResult OnPostDelete(int nummer)
     {
@@ -52,4 +53,7 @@ public class EditBooking : PageModel
         return Page();
     }
     
+}                                                                                                  
+=======
 }
+>>>>>>> parent of 4ef5aef (init)
