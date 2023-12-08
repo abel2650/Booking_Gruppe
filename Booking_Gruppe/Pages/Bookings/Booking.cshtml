@@ -28,17 +28,9 @@
                     <td>@frisør.Varighed</td>
                     <td>@frisør.Pris</td>
                     <td>
-                        <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Tilføj til kurv</button>
+                        <button type="button" class="btn btn-success" asp-route-nummer="@frisør.Nummer" asp-page-handler="Tilføj">Tilføj til kurv</button>
                     </td>
-                    @if (@Model.IsAdmin)
-                    {
-                        <td>
-                            <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Slet</button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-success" onclick="addToCart(@frisør.Nummer, @frisør.Pris)">Ændre</button>
-                        </td>
-                    }
+                    
                 </tr>
             }
         </tbody>
