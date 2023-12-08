@@ -43,13 +43,4 @@ public class EditBooking : PageModel
     {
         
     }
-
-    public IActionResult OnPostDelete(int nummer)
-    {
-        Frisør klip = PriserRepositoryny.HentFrisør(nummer);
-        ListFrisør.Remove(klip);
-        _listFrisør = PriserRepositoryny.ListeAfFrisør;
-        return Page();
-    }
-    
 }
